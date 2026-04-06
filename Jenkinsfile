@@ -99,6 +99,7 @@ pipeline {
                 }
             }
         }
+    }
 
     post {
     always {
