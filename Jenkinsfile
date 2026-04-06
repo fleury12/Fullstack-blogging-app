@@ -60,6 +60,11 @@ pipeline {
                 }
             }
         }
+        stage('Docker Version') {
+            steps { 
+                sh 'docker version'
+            }
+        }
         stage('Build & Tag Docker Image') {
             steps {
                script {
