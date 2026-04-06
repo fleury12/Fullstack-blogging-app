@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/abrahimcse/FullStack-Blogging-App.git'
+               git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/fleury12/Fullstack-blogging-app.git'
             }
         }
         stage('Compile') {
@@ -125,7 +125,7 @@ pipeline {
             emailext (
                 subject: "${jobName} - Build ${buildNumber} - ${pipelineStatus.toUpperCase()}",
                 body: body,
-                to: 'abrahim.ctech@gmail.com',
+                to: 'angekoffi160@gmail.com',
                 from: 'jenkins@example.com',
                 replyTo: 'jenkins@example.com',
                 mimeType: 'text/html',
