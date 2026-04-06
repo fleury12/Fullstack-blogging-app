@@ -68,7 +68,7 @@ pipeline {
         stage('Build & Tag Docker Image') {
             steps {
                script {
-                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                   withDockerRegistry(credentialsId: 'docker-cred', url: '') {
                             sh "docker build -t fleury12/bloggingapp:latest ."
                     }
                }
@@ -82,7 +82,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                script {
-                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                   withDockerRegistry(credentialsId: 'docker-cred', url: '') {
                             sh "docker push fleury12/bloggingapp:latest"
                     }
                }
