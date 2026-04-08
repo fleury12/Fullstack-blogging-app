@@ -96,9 +96,6 @@ resource "aws_security_group" "fleury_instance_sg" {
 
 locals {
   instance_specs = [
-    { name = "Master", instance_type = "t2.medium", volume_size = 25 },
-    { name = "Slave-1", instance_type = "t2.medium", volume_size = 25 },
-    { name = "Slave-2", instance_type = "t2.medium", volume_size = 25 },
     { name = "SonarQube", instance_type = "t2.medium", volume_size = 25 },
     { name = "Nexus", instance_type = "t2.medium", volume_size = 25 },
     { name = "Monitor", instance_type = "t2.medium", volume_size = 25 },

@@ -106,6 +106,8 @@ Press enter or click to view image in full size
     
 
 Press enter or click to view image in full size
+all of this is desribed in the terrafom main.tf file.
+we will set up this in the next section.
 
 ![](https://miro.medium.com/v2/resize:fit:700/0*HiK2H1lqLBR0Fs8r.png)
 
@@ -408,7 +410,7 @@ Press enter or click to view image in full size
     
 
 ```plaintext
-aws eks --region ap-southeast-1 update-kubeconfig --name abrahimcse-cluster
+aws eks --region ap-southeast-1 update-kubeconfig --name abrahimcse-cluster  # replace by your cluster name
 ```
 
 1. Install Kubect and check nodes
@@ -823,7 +825,7 @@ vim jenkin.sh
 sudo apt install openjdk-17-jre-headless -y
 # Download Jenkins GPG key
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
-  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
 # Add Jenkins repository to package manager sources
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
@@ -832,6 +834,8 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 sudo apt-get update
 # Install Jenkins
 sudo apt-get install jenkins -y
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
 ```
 
 **Run it:**
